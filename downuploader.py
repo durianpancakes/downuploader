@@ -31,7 +31,7 @@ def main():
             urls_list = file.readlines()
             print("Found", len(urls_list), "entries")
     except (FileNotFoundError):
-        print("ERROR: url_inputs.txt not found!")
+        print("ERROR: url_inputs.txt not found.")
         print("Please ensure that url_inputs.txt is in the same directory as downuploader!")
         return
 
@@ -81,12 +81,14 @@ def main():
     
     if (num_failures > 0):
         print("There were", num_failures, "failures. Find the failures at failed_urls", current_timestamp, ".txt in", dir_path)
+    else:
+        print("All urls successfully processed!")
     
     print(50 * '=')
     
-def delete_local_video(filepath:str):
+def delete_local_video():
     print("Deleting file...")
-    os.remove(filepath)
+    os.remove(dir_path + "/tmp.mp4")
     print("File deleted")
 
 def upload_video(youtube_api, video):
@@ -95,11 +97,11 @@ def upload_video(youtube_api, video):
         part='snippet, status',
         body={
             'snippet': {
-                'title':video_title,
-                'description': "This is a test"
+                'title':video.title,
+                'description': video.description
             },
             'status':{
-                'privacyStatus': 'private'
+                'privacyStatus': 'public'
             }
         },
         media_body = MediaFileUpload(dir_path + "/tmp.mp4")
