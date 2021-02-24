@@ -53,7 +53,7 @@ Found 0 entries
 Looking for client_secret.json
 client_secret.json exists
 Initializing authentication
-Please visit this URL to authorize this application: https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=1012762409250-ratuc0ge96ua6auaqeuukr58auag782g.apps.googleusercontent.com&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.upload&state=AXWNF6N7TTG6EsgUCm89K8W0BVsTUE&prompt=consent&access_type=offline
+Please visit this URL to authorize this application: https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=...
 Enter the authorization code:
 ```
 Ensure that you are logging in to a YouTube channel account, if not, the tool will not work. 
